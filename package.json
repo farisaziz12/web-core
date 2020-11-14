@@ -1,0 +1,22 @@
+{
+  "name": "web-core",
+  "version": "1.0.1",
+  "description": "Reusable packages to make website building faster",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farisaziz12/web-core.git"
+  },
+  "author": "Faris Aziz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farisaziz12/web-core/issues"
+  },
+  "homepage": "https://github.com/farisaziz12/web-core#readme",
+  "devDependencies": {
+    "standard-version": "^9.0.0"
+  }
+}
