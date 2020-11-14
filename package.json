@@ -1,6 +1,6 @@
 {
   "name": "web-core",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Reusable packages to make website building faster",
   "scripts": {
     "test": "jest --passWithNoTests",
