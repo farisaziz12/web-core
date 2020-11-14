@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/farisaziz12/web-core/issues"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@farisaziz12"
+  },
   "homepage": "https://github.com/farisaziz12/web-core#readme",
   "devDependencies": {
     "standard-version": "^9.0.0"
