@@ -26,7 +26,7 @@
         "url": "https://github.com/farisaziz12/web-core/issues"
     },
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com/@farisaziz12"
+        "registry": "https://npm.pkg.github.com"
     },
     "homepage": "https://github.com/farisaziz12/web-core#readme",
     "devDependencies": {
