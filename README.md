@@ -29,5 +29,6 @@ run `npm install @farisaziz12/web-core`
     // The auth.login method returns a promise with the firebase user data
     auth
     .login(email, password)
-    .then((userData) => console.log(userData));
+    .then((userData) => console.log(userData))
+    .catch((error) => console.error(error));
 ```
