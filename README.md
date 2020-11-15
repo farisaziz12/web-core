@@ -15,7 +15,7 @@ run `npm install @farisaziz12/webcore`
 ```javascript
     const { Auth } = require("@farisaziz12/web-core/packages/auth/src");
     
-    // Firebase config for initialization 
+    // Config object for firebase initialization 
     const config = {
       apiKey: "firebaseApiKey",
     };
