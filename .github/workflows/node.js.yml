@@ -33,6 +33,7 @@ jobs:
                   git config --global user.name "Faris Aziz"
                   git config --global user.email "farisaziz12@gmail.com"
                   npm run release
+                  git pull origin main
                   git push --follow-tags origin main
                   npm publish
               env:
