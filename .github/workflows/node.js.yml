@@ -22,10 +22,17 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
+                  registry-url: https://npm.pkg.github.com/
+                  scope: "@farisaziz12"
             - run: npm ci
             - run: npm run build --if-present
             - run: npm test
-
             - name: Deploy Package
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               run: npm publish
+=======
+            - name: Deploy Package
+              env:
+                  TOKEN: ${{ secrets.TOKEN }}
+              run: |
+                  npm publish
