@@ -5,7 +5,7 @@ Reusable packages to make website building faster
 
 ## Getting Started
 
-run `npm install @farisaziz12/webcore`
+run `npm install @farisaziz12/web-core`
 
 ## Packages
   ### Auth Package `@farisaziz12/web-core/packages/auth/src`
