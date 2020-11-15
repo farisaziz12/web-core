@@ -33,6 +33,8 @@ jobs:
                   git config --global user.name "Faris Aziz"
                   git config --global user.email "farisaziz12@gmail.com"
                   npm run release
+                  git push --follow-tags origin main
+                  npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
