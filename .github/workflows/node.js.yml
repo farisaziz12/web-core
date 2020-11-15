@@ -30,7 +30,7 @@ jobs:
             - name: Deploy Package
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               run: |
-                  npm release
+                  npm run release
                   npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
