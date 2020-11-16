@@ -1,6 +1,6 @@
 {
     "name": "@farisaziz12/web-core",
-    "version": "1.2.11",
+    "version": "1.2.12",
     "description": "Reusable packages to make website building faster",
     "scripts": {
         "test": "jest --passWithNoTests",
