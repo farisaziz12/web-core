@@ -15,11 +15,25 @@ class Auth {
         return new Promise((resolve, reject) => {
             this.auth
                 .signInWithEmailAndPassword(email, password)
-                .then(() => this.app.auth().onAuthStateChanged((user) => {
-                resolve(user);
-            }))
-                .catch((error) => reject(error));
+                .then(() => resolve(this.auth.currentUser))
+                .catch((error) => reject(error.message));
         });
+    }
+    signUp(email, password, passwordConfirm) {
+        if (email && password === passwordConfirm) {
+            return new Promise((resolve, reject) => {
+                this.auth
+                    .createUserWithEmailAndPassword(email, password)
+                    .then(() => {
+                    this.auth.currentUser.sendEmailVerification();
+                    resolve(this.auth.currentUser);
+                })
+                    .catch((error) => reject(error.message));
+            });
+        }
+        else {
+            throw new Error("Passwords do not match");
+        }
     }
 }
 exports.Auth = Auth;

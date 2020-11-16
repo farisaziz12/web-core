@@ -14,14 +14,24 @@ export class Auth {
         return new Promise((resolve: any, reject: any) => {
             this.auth
                 .signInWithEmailAndPassword(email, password)
-                .then(() =>
-                    this.app.auth().onAuthStateChanged((user: any) => {
-                        resolve(user)
-                    })
-                )
-                .catch((error: any) => reject(error));
+                .then(() => resolve(this.auth.currentUser))
+                .catch((error: any) => reject(error.message));
         });
     }
+
+    signUp(email: string, password: string, passwordConfirm: string) {
+        if (email && password === passwordConfirm){
+            return new Promise((resolve: any, reject: any) => {
+                this.auth
+                .createUserWithEmailAndPassword(email, password)
+                .then(() => {
+                    this.auth.currentUser.sendEmailVerification()
+                    resolve(this.auth.currentUser)
+                })
+                .catch((error: any) => reject(error.message));
+            })
+        } else {
+            throw new Error("Passwords do not match")
+        }
+    }
 }
-
-
