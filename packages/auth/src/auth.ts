@@ -51,4 +51,18 @@ export class Auth {
             .catch((error: any) => reject(error.message))
         })
     }
+
+    getCurrentUser() {
+        return new Promise((resolve: any, reject: any) => {
+            this.auth.onAuthStateChanged((currentUser: object) => {
+                if (currentUser){
+                    //  If user is logged in firebase returns current user data
+                    resolve(currentUser)
+                } else {
+                    // If no user is signed in currentUser is null
+                    reject(new Error("No user logged in"))
+                }
+            })
+        })
+    }
 }
