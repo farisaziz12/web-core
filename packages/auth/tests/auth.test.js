@@ -45,6 +45,15 @@ describe("Auth Class", () => {
         }
     });
 
+    // Mocking getCurrentUser function to return promise with currentUser object if user is logged in
+    Auth.prototype.getCurrentUser = jest.fn((currentUser) => {
+        if (currentUser) {
+            return Promise.resolve(currentUser);
+        } else {
+            throw new Error("No user logged in");
+        }
+    });
+
     // AUTH CLASS TESTS
     test("Auth class exists", () => {
         expect(Auth).toBeDefined();
@@ -118,6 +127,26 @@ describe("Auth Class", () => {
 
         expect(() => {
             auth.signOut(false);
+        }).toThrow();
+    });
+
+    // AUTH CLASS GET CURRENT USER METHOD TESTS
+
+    test("Auth class instance getCurrentUser method returns currentUser object if user is signed in", async () => {
+        const auth = new Auth(mockConfig);
+        const user = {
+            email: "user@test.com",
+        };
+        const result = await auth.getCurrentUser(user);
+
+        expect(result.email).toBe(expectedResult.email);
+    });
+
+    test("Auth class instance getCurrentUser method throws error when no user is logged in", () => {
+        const auth = new Auth(mockConfig);
+
+        expect(() => {
+            auth.getCurrentUser();
         }).toThrow();
     });
 });
