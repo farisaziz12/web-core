@@ -31,6 +31,6 @@ jobs:
                   npm run release
                   git pull origin main
                   git push --follow-tags origin main
-                  npm publish
+                  npm publish --@farisaziz12:registry=https://registry.npmjs.org/
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
