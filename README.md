@@ -39,25 +39,37 @@ const config = {
 const auth = new Auth(config);
 
 // LOGIN
-// The auth.login method returns a promise with the firebase user data
 auth.login(email, password)
     .then((userData) => console.log(userData))
     .catch((error) => console.error(error));
 
+// The auth.login method returns a promise with the firebase user data
+
 // SIGN UP
-/* The auth.signUp method returns a promise with the user data
-  and sends a confirmation email using firebase
-  if the password and password confirmation match
-*/
 auth.signUp(email, password, passwordConfirmation)
     .then((userData) => console.log(userData))
     .catch((error) => console.error(error));
 
-/* if no password confirmation is provided or the passwords do not match
-  an error is thrown and the user is not signed up
+/* The auth.signUp method returns a promise with the user data
+  and sends a confirmation email using firebase
+  if the password and password confirmation match
 */
+
 // SIGN UP ERROR EXAMPLE
 auth.signUp("user@test.com", "password", "pswrd")
     .then((userData) => console.log(userData))
     .catch((error) => console.error(error)); // => Error: Passwords do not match
+
+/* If no password confirmation is provided or the passwords do not match
+  an error is thrown and the user is not signed up
+*/
+
+// SIGN OUT
+auth.signOut()
+    .then((response) => console.log(response)) // response => { success: true }
+    .catch((error) => console.error(error));
+
+/* On successful firebase sign out the auth.signOut method returns a promise which
+  resolves to a success object
+*/
 ```
