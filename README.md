@@ -72,4 +72,13 @@ auth.signOut()
 /* On successful firebase sign out the auth.signOut method returns a promise which
   resolves to a success object
 */
+
+// GET CURRENT USER
+auth.getCurrentUser()
+    .then((currentUser) => console.log(currentUser)) // response => { email: "xxx@xxx.com", ... }
+    .catch((error) => console.error(error));
+
+/* If a user is currently logged in the auth.getCurrentUser method will return
+  an object with the current user's data
+*/
 ```
