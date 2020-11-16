@@ -39,5 +39,17 @@ class Auth {
             throw new Error("Passwords do not match");
         }
     }
+    signOut() {
+        return new Promise((resolve, reject) => {
+            this.auth.signOut()
+                .then(() => {
+                // Sign-out successful
+                resolve({
+                    success: true
+                });
+            })
+                .catch((error) => reject(error.message));
+        });
+    }
 }
 exports.Auth = Auth;
