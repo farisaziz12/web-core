@@ -5,6 +5,16 @@ Reusable packages to make website building faster
 
 ## Getting Started
 
+#### Step 1:
+
+Create a `.npmrc` file in the same directory as your `package.json` file and add this inside:
+```
+// .npmrc
+registry=https://npm.pkg.github.com/farisaziz12
+```
+
+#### Step 2:
+
 run `npm install @farisaziz12/web-core`
 
 ## Packages
