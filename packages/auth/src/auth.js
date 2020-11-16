@@ -25,6 +25,10 @@ class Auth {
                 this.auth
                     .createUserWithEmailAndPassword(email, password)
                     .then(() => {
+                    /*
+                    Sends verification email using firebase
+                    if sign up is successful
+                    */
                     this.auth.currentUser.sendEmailVerification();
                     resolve(this.auth.currentUser);
                 })

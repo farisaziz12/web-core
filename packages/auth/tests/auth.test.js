@@ -71,6 +71,7 @@ describe("Auth Class", () => {
         const auth = new Auth(mockConfig);
 
         expect(() => {
+            // passwordConfirm misspelled
             auth.signUp("user@test.com", "userPassword", "usrPassword");
         }).toThrow();
     });
@@ -79,6 +80,7 @@ describe("Auth Class", () => {
         const auth = new Auth(mockConfig);
 
         expect(() => {
+            // No passwordConfirm provided
             auth.signUp("user@test.com", "userPassword");
         }).toThrow();
     });
