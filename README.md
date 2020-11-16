@@ -20,7 +20,7 @@ run `npm install @farisaziz12/web-core`
 ## Packages
   ### Auth Package `@farisaziz12/web-core/packages/auth/src`
   
-  The **Auth** package is used for all authentication needs using firebase
+  The **Auth** package is used for all authentication needs using [firebase](https://firebase.google.com/docs/web/setup)
   
 ```javascript
     const { Auth } = require("@farisaziz12/web-core/packages/auth/src");
