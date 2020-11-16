@@ -1,7 +1,6 @@
 {
     "name": "@farisaziz12/web-core.auth",
     "version": "1.0.0",
-    "type": "module",
     "scripts": {
         "test": "jest --passWithNoTests",
         "release": "standard-version",
