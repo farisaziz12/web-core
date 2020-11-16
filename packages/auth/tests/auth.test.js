@@ -13,6 +13,9 @@ describe("Auth Class", () => {
     const mockConfig = {
         apiKey: "apiKey",
     };
+
+    // MOCK FUNCTIONS
+
     // Mocking login function to return promise with user object
     Auth.prototype.login = jest.fn((email, password) => {
         if (email && password) {
@@ -31,6 +34,18 @@ describe("Auth Class", () => {
         }
     });
 
+    // Mocking signOut function to return promise with success object if firebase sign out is a success
+    Auth.prototype.signOut = jest.fn((success) => {
+        if (success) {
+            return Promise.resolve({
+                success: true,
+            });
+        } else {
+            throw new Error("Sign out failed");
+        }
+    });
+
+    // AUTH CLASS TESTS
     test("Auth class exists", () => {
         expect(Auth).toBeDefined();
     });
@@ -40,6 +55,8 @@ describe("Auth Class", () => {
 
         expect(auth).toBeDefined();
     });
+
+    // AUTH CLASS LOGIN METHOD TESTS
 
     test("Auth class instance login method returns user object with correct login arguments", async () => {
         const auth = new Auth(mockConfig);
@@ -55,6 +72,8 @@ describe("Auth Class", () => {
             auth.login();
         }).toThrow();
     });
+
+    // AUTH CLASS SIGNUP METHOD TESTS
 
     test("Auth class instance signUp method returns user object with correct signUp arguments", async () => {
         const auth = new Auth(mockConfig);
@@ -82,6 +101,23 @@ describe("Auth Class", () => {
         expect(() => {
             // No passwordConfirm provided
             auth.signUp("user@test.com", "userPassword");
+        }).toThrow();
+    });
+
+    // AUTH CLASS SIGNOUT METHOD TESTS
+
+    test("Auth class instance signOut method returns success object on successful sign out", async () => {
+        const auth = new Auth(mockConfig);
+        const result = await auth.signOut(true);
+
+        expect(result.success).toBeTruthy();
+    });
+
+    test("Auth class instance signOut method throws error when login fails", () => {
+        const auth = new Auth(mockConfig);
+
+        expect(() => {
+            auth.signOut(false);
         }).toThrow();
     });
 });
