@@ -97,11 +97,12 @@ Contributions are always welcome! Feel free to contribute towards any of the fol
 Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)).
 
 1. Fork the repo and create your branch from `develop`.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Make sure your code lints.
-6. Issue that pull request!
+2. Make sure your commits follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standards.
+3. If you've added code that should be tested, add tests.
+4. If you've changed APIs, update the documentation.
+5. Ensure the test suite passes.
+6. Make sure your code lints.
+7. Issue that pull request!
 
 ## Report bugs using Github's [issues](https://github.com/farisaziz12/web-core/issues)
 GitHub is used issues to track bugs. Report a bug by [opening a new issue](https://github.com/farisaziz12/web-core/issues/new); it's that easy!
