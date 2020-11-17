@@ -126,4 +126,4 @@ GitHub is used issues to track bugs. Report a bug by [opening a new issue](https
 
 ## Note:
 
-Remeber to run `npm run compile` so that your typescript code is compiled into Javascript and `npm test` to check if your code passes all old and new tests before you commit.
+Remeber to run `npm run compile` so that your Typescript code is compiled into Javascript and `npm test` to check if your code passes all old and new tests before you commit.
