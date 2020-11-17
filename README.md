@@ -2,7 +2,7 @@
 
 Reusable packages to make website building faster
 
-## Getting Started
+# Getting Started
 
 #### Step 1:
 
@@ -82,3 +82,51 @@ auth.getCurrentUser()
   an object with the current user's data
 */
 ```
+
+# Contributing to Web-Core
+Contributions are always welcome! Feel free to contribute towards any of the following:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
+
+
+## This Project uses [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)).
+
+1. Fork the repo and create your branch from `develop`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
+
+## Any contributions you make will be under the MIT Software License
+In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
+
+## Report bugs using Github's [issues](https://github.com/farisaziz12/web-core/issues)
+GitHub is used issues to track bugs. Report a bug by [opening a new issue](); it's that easy!
+
+## Write bug reports with detail, background, and sample code:
+
+**Great Bug Reports** tend to have:
+
+- A quick summary and/or background
+- Steps to reproduce
+- Be specific!
+- Give sample code if you can.
+- What you expected would happen
+- What actually happens
+- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+
+
+## Use a Consistent Coding Style
+
+* 4 spaces for indentation
+* You can try running `npm run format` to get prettier to format your code.
+
+## Note:
+
+Remeber to run `npm run compile` so that your typescript code is compiled into Javascript and `npm test` to check if your code passes all old and new tests before you commit.
