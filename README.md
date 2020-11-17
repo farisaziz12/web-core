@@ -94,7 +94,7 @@ Contributions are always welcome! Feel free to contribute towards any of the fol
 
 
 ## This Project uses [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
-Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)).
+Pull requests are the best way to propose changes to the codebase.
 
 1. Fork the repo and create your branch from `develop`.
 2. Make sure your commits follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standards.
