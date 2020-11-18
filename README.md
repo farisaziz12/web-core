@@ -15,6 +15,10 @@ registry=https://npm.pkg.github.com/farisaziz12
 
 #### Step 2:
 
+If you haven't already, [configure npm for use with github packages ](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages).
+
+#### Step 3:
+
 run `npm install @farisaziz12/web-core`
 
 ## Packages
@@ -32,7 +36,7 @@ const config = {
 };
 
 /*
-  For Authentication to work the Auth class instance needs to 
+  For Authentication to work the Auth class instance needs to
   receive a config object with your firebase api key
 */
 
