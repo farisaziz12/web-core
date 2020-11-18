@@ -15,6 +15,7 @@ Please delete options that are not relevant.
 -   [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 -   [ ] Styling change (visual change that has no impact on functionality)
 -   [ ] Refactor (non-breaking refactor which doesn't change functionality)
+-   [ ] Docs (Update to README)
 
 # Testing Instructions
 
