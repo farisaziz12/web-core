@@ -20,6 +20,17 @@ var Auth = /** @class */ (function () {
                 .catch(function (error) { return reject(error.message); });
         });
     };
+    Auth.prototype.googleLogin = function () {
+        var _this = this;
+        var provider = new app_1.default.auth.GoogleAuthProvider();
+        provider.addScope("profile");
+        provider.addScope("email");
+        return new Promise(function (resolve, reject) {
+            _this.auth.signInWithPopup(provider)
+                .then(function (resp) { return resolve(resp.user); })
+                .catch(function (error) { return reject(error.message); });
+        });
+    };
     Auth.prototype.signUp = function (email, password, passwordConfirm) {
         var _this = this;
         if (email && password === passwordConfirm) {

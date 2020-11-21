@@ -49,6 +49,13 @@ auth.login(email, password)
 
 // The auth.login method returns a promise with the firebase user data
 
+// GOOGLE LOGIN
+auth.googleLogin() // No arguments needed as the user is redirected to a google login
+    .then((userData) => console.log(userData))
+    .catch((error) => console.error(error));
+
+// The auth.googleLogin method returns a promise with the user data on successful redirect and login
+
 // SIGN UP
 auth.signUp(email, password, passwordConfirmation)
     .then((userData) => console.log(userData))
@@ -88,16 +95,17 @@ auth.getCurrentUser()
 ```
 
 # Contributing to Web-Core
+
 Contributions are always welcome! Feel free to contribute towards any of the following:
 
-- Reporting a bug
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
-- Becoming a maintainer
-
+-   Reporting a bug
+-   Discussing the current state of the code
+-   Submitting a fix
+-   Proposing new features
+-   Becoming a maintainer
 
 ## This Project uses [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+
 Pull requests are the best way to propose changes to the codebase.
 
 1. Fork the repo and create your branch from `develop`.
@@ -109,25 +117,25 @@ Pull requests are the best way to propose changes to the codebase.
 7. Issue that pull request!
 
 ## Report bugs using Github's [issues](https://github.com/farisaziz12/web-core/issues)
+
 GitHub is used issues to track bugs. Report a bug by [opening a new issue](https://github.com/farisaziz12/web-core/issues/new); it's that easy!
 
 ## Write bug reports with detail, background, and sample code:
 
 **Great Bug Reports** tend to have:
 
-- A quick summary and/or background
-- Steps to reproduce
-- Be specific!
-- Give sample code if you can.
-- What you expected would happen
-- What actually happens
-- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
-
+-   A quick summary and/or background
+-   Steps to reproduce
+-   Be specific!
+-   Give sample code if you can.
+-   What you expected would happen
+-   What actually happens
+-   Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
 
 ## Use a Consistent Coding Style
 
-* 4 spaces for indentation
-* You can try running `npm run format` to get prettier to format your code.
+-   4 spaces for indentation
+-   You can try running `npm run format` to get prettier to format your code.
 
 ## Note:
 
