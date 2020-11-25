@@ -2,7 +2,7 @@
 
 Reusable packages to make website building faster
 
-## Getting Started
+# Getting Started
 
 #### Step 1:
 
@@ -14,6 +14,10 @@ registry=https://npm.pkg.github.com/farisaziz12
 ```
 
 #### Step 2:
+
+If you haven't already, [configure npm for use with github packages ](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages).
+
+#### Step 3:
 
 run `npm install @farisaziz12/web-core`
 
@@ -32,7 +36,7 @@ const config = {
 };
 
 /*
-  For Authentication to work the Auth class instance needs to 
+  For Authentication to work the Auth class instance needs to
   receive a config object with your firebase api key
 */
 
@@ -44,6 +48,13 @@ auth.login(email, password)
     .catch((error) => console.error(error));
 
 // The auth.login method returns a promise with the firebase user data
+
+// GOOGLE LOGIN
+auth.googleLogin() // No arguments needed as the user is redirected to a google login
+    .then((userData) => console.log(userData))
+    .catch((error) => console.error(error));
+
+// The auth.googleLogin method returns a promise with the user data on successful redirect and login
 
 // SIGN UP
 auth.signUp(email, password, passwordConfirmation)
@@ -82,3 +93,50 @@ auth.getCurrentUser()
   an object with the current user's data
 */
 ```
+
+# Contributing to Web-Core
+
+Contributions are always welcome! Feel free to contribute towards any of the following:
+
+-   Reporting a bug
+-   Discussing the current state of the code
+-   Submitting a fix
+-   Proposing new features
+-   Becoming a maintainer
+
+## This Project uses [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+
+Pull requests are the best way to propose changes to the codebase.
+
+1. Fork the repo and create your branch from `develop`.
+2. Make sure your commits follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standards.
+3. If you've added code that should be tested, add tests.
+4. If you've changed APIs, update the documentation.
+5. Ensure the test suite passes.
+6. Make sure your code lints.
+7. Issue that pull request!
+
+## Report bugs using Github's [issues](https://github.com/farisaziz12/web-core/issues)
+
+GitHub is used issues to track bugs. Report a bug by [opening a new issue](https://github.com/farisaziz12/web-core/issues/new); it's that easy!
+
+## Write bug reports with detail, background, and sample code:
+
+**Great Bug Reports** tend to have:
+
+-   A quick summary and/or background
+-   Steps to reproduce
+-   Be specific!
+-   Give sample code if you can.
+-   What you expected would happen
+-   What actually happens
+-   Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+
+## Use a Consistent Coding Style
+
+-   4 spaces for indentation
+-   You can try running `npm run format` to get prettier to format your code.
+
+## Note:
+
+Remeber to run `npm run compile` so that your Typescript code is compiled into Javascript and `npm test` to check if your code passes all old and new tests before you commit.

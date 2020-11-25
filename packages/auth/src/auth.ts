@@ -19,6 +19,18 @@ export class Auth {
         });
     }
 
+    googleLogin(){
+        const provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope("profile");
+        provider.addScope("email");
+
+        return new Promise((resolve:any, reject: any) => {
+            this.auth.signInWithPopup(provider)
+            .then((resp: any) => resolve(resp.user))
+            .catch((error: any) => reject(error.message));
+        })
+    }
+
     signUp(email: string, password: string, passwordConfirm: string) {
         if (email && password === passwordConfirm){
             return new Promise((resolve: any, reject: any) => {

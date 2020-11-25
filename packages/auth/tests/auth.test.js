@@ -25,6 +25,15 @@ describe("Auth Class", () => {
         }
     });
 
+    // Mocking googleLogin function to return promise with user object
+    Auth.prototype.googleLogin = jest.fn((success) => {
+        if (success) {
+            return Promise.resolve(expectedResult);
+        } else {
+            throw new Error("Login Fail");
+        }
+    });
+
     // Mocking signUp function to return promise with user object if passwords match
     Auth.prototype.signUp = jest.fn((email, password, passwordConfirm) => {
         if (email && password === passwordConfirm) {
@@ -79,6 +88,23 @@ describe("Auth Class", () => {
 
         expect(() => {
             auth.login();
+        }).toThrow();
+    });
+
+    // AUTH CLASS LOGIN METHOD TESTS
+
+    test("Auth class instance googleLogin method returns user object if redirect and login is successful", async () => {
+        const auth = new Auth(mockConfig);
+        const result = await auth.googleLogin(true);
+
+        expect(result.email).toBe(expectedResult.email);
+    });
+
+    test("Auth class instance googleLogin method throws error when redirect login is unsuccessful", () => {
+        const auth = new Auth(mockConfig);
+
+        expect(() => {
+            auth.googleLogin(false);
         }).toThrow();
     });
 
