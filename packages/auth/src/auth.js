@@ -1,15 +1,19 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __importDefault =
+    (this && this.__importDefault) ||
+    function (mod) {
+        return mod && mod.__esModule ? mod : { default: mod };
+    };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Auth = void 0;
 const app_1 = __importDefault(require("firebase/app"));
 require("firebase/auth");
 class Auth {
     constructor(config) {
-        this.app = app_1.default.initializeApp(config);
-        this.auth = app_1.default.auth();
+        if (!app_1.default.apps.length) {
+            this.app = app_1.default.initializeApp(config);
+            this.auth = app_1.default.auth();
+        }
     }
     login(email, password) {
         return new Promise((resolve, reject) => {
@@ -24,7 +28,8 @@ class Auth {
         provider.addScope("profile");
         provider.addScope("email");
         return new Promise((resolve, reject) => {
-            this.auth.signInWithPopup(provider)
+            this.auth
+                .signInWithPopup(provider)
                 .then((resp) => resolve(resp.user))
                 .catch((error) => reject(error.message));
         });
@@ -35,29 +40,29 @@ class Auth {
                 this.auth
                     .createUserWithEmailAndPassword(email, password)
                     .then(() => {
-                    /*
+                        /*
                     Sends verification email using firebase
                     if sign up is successful
                     */
-                    this.auth.currentUser.sendEmailVerification();
-                    resolve(this.auth.currentUser);
-                })
+                        this.auth.currentUser.sendEmailVerification();
+                        resolve(this.auth.currentUser);
+                    })
                     .catch((error) => reject(error.message));
             });
-        }
-        else {
+        } else {
             throw new Error("Passwords do not match");
         }
     }
     signOut() {
         return new Promise((resolve, reject) => {
-            this.auth.signOut()
+            this.auth
+                .signOut()
                 .then(() => {
-                // Sign-out successful
-                resolve({
-                    success: true
-                });
-            })
+                    // Sign-out successful
+                    resolve({
+                        success: true,
+                    });
+                })
                 .catch((error) => reject(error.message));
         });
     }
@@ -67,8 +72,7 @@ class Auth {
                 if (currentUser) {
                     //  If user is logged in firebase returns current user data
                     resolve(currentUser);
-                }
-                else {
+                } else {
                     // If no user is signed in currentUser is null
                     reject(new Error("No user logged in"));
                 }
