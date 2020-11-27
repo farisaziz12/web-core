@@ -8,8 +8,10 @@ var app_1 = __importDefault(require("firebase/app"));
 require("firebase/auth");
 var Auth = /** @class */ (function () {
     function Auth(config) {
-        this.app = app_1.default.initializeApp(config);
-        this.auth = app_1.default.auth();
+        if (!app_1.default.apps.length) {
+            this.app = app_1.default.initializeApp(config);
+            this.auth = app_1.default.auth();
+        }
     }
     Auth.prototype.login = function (email, password) {
         var _this = this;
