@@ -2,26 +2,31 @@
 .disabled {
   height: 32px;
   width: 90px;
+  font-size: 18px;
 }
 
 .small {
   height: 26px;
   width: 70px;
+  font-size: 15px;
 }
 
 .mini {
   height: 20px;
   width: 55px;
+  font-size: 13px;
 }
 
 .large {
   height: 38px;
   width: 100px;
+  font-size: 20px;
 }
 
 .jumbo {
   height: 43px;
   width: 110px;
+  font-size: 23px;
 }
 
 .default,
@@ -30,6 +35,8 @@
 .large,
 .jumbo,
 .disabled {
+  font-weight: bold;
+
   border-radius: 10px;
   border: none;
 }
@@ -43,8 +50,31 @@
 }
 
 .disabled {
+  opacity: 0.7;
   transform: none !important;
   cursor: not-allowed !important;
+}
+
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.right,
+.left {
+  margin-top: 10px;
+}
+
+.right {
+  float: right;
+  margin-right: 10px;
+}
+
+.left {
+  float: left;
+  margin-left: 10px;
 }
 
 .default:hover,
@@ -53,6 +83,6 @@
 .large:hover,
 .jumbo:hover {
   opacity: 0.7;
-  transform: scale(1.1);
+  transform: scale(1.01);
   cursor: pointer;
 }
