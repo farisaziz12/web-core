@@ -1,0 +1,58 @@
+.default,
+.disabled {
+  height: 32px;
+  width: 90px;
+}
+
+.small {
+  height: 26px;
+  width: 70px;
+}
+
+.mini {
+  height: 20px;
+  width: 55px;
+}
+
+.large {
+  height: 38px;
+  width: 100px;
+}
+
+.jumbo {
+  height: 43px;
+  width: 110px;
+}
+
+.default,
+.small,
+.mini,
+.large,
+.jumbo,
+.disabled {
+  border-radius: 10px;
+  border: none;
+}
+
+.default,
+.small,
+.mini,
+.large,
+.jumbo {
+  transition: 0.2s ease-in-out;
+}
+
+.disabled {
+  transform: none !important;
+  cursor: not-allowed !important;
+}
+
+.default:hover,
+.small:hover,
+.mini:hover,
+.large:hover,
+.jumbo:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  cursor: pointer;
+}
