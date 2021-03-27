@@ -26,8 +26,8 @@ export class ShowButton extends Button {
     const { show } = this.state
     return (
       <div>
-        {show && this.children}
         {this.renderButton()}
+        {show && this.children}
       </div>
     )
   }
