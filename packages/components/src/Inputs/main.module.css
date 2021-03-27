@@ -1,0 +1,77 @@
+.default,
+.disabled {
+  height: 26px;
+}
+
+.container-default, .container-disabled, .default, .disabled {
+    width: 90%
+}
+
+.small {
+  height: 26px;
+}
+
+.small, .container-small{
+    width: 70px;
+}
+
+.mini {
+  height: 20px;
+  width: 55px;
+}
+
+.mini, .container-mini{
+    width: 55px;
+}
+
+.large {
+  height: 26px;
+}
+
+.large, .container-large{
+    width: 125px;
+}
+
+.jumbo {
+  height: 28px;
+}
+
+.jumbo, .container-jumbo{
+    width: 180px;
+}
+
+.default,
+.small,
+.mini,
+.large,
+.jumbo,
+.disabled {
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+
+.disabled {
+  opacity: 0.7;
+  transform: none !important;
+  cursor: not-allowed !important;
+}
+
+.center {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.error{
+    color: #FF0000
+}
+
+
