@@ -1,9 +1,11 @@
+const autoBind = require('auto-bind')
 import React, { Component } from 'react'
 import styles from './main.module.css'
 
 export class Button extends Component {
   constructor(props) {
     super(props)
+    autoBind(this)
     const {
       children,
       text,
@@ -12,7 +14,7 @@ export class Button extends Component {
       onClick,
       disabled,
       size,
-      style,
+      style = {},
       center,
       left,
       right,
@@ -22,12 +24,10 @@ export class Button extends Component {
 
     const borderColor = hex && border ? `solid 3px ${hex}` : ''
     const backgroundColor = hex && !border ? hex : '#808080'
-    const color = hex && border ? hex : '#FFFFFF'
 
     this.styleObj = {
       ...style,
       backgroundColor,
-      color,
       border: borderColor
     }
 
@@ -82,7 +82,7 @@ export class Button extends Component {
         disabled={this.disabled}
         className={this.getClasses()}
         style={this.styleObj}
-        onClick={(e) => this.onClick(e)}
+        onClick={this.onClick}
         type={this.type}
       >
         {this.text || this.children}
