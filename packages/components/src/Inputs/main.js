@@ -1,5 +1,5 @@
-const autoBind = require('auto-bind')
 import React, { Component } from 'react'
+import autoBind from 'auto-bind'
 import { propOr } from 'ramda'
 import styles from './main.module.css'
 
@@ -37,6 +37,7 @@ export class Input extends Component {
     const error = propOr(undefined, 'error', validation)
     const validationCallback = propOr(undefined, 'callback', validation)
 
+    this.props = props
     this.className = className
     this.onChangeFunc = onChange
     this.disabled = disabled
@@ -135,15 +136,10 @@ export class Input extends Component {
         )}
         <input
           onChange={this.onChange}
-          placeholder={this.placeholder}
-          type={this.type}
-          id={this.id}
-          name={this.name}
           value={this.state.value}
           style={this.styleObj}
           className={this.getInputClasses()}
-          disabled={this.disabled}
-          required={this.required}
+          {...this.props}
         />
         {showError && <p className={styles.error}>{this.error}</p>}
       </div>
