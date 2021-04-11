@@ -1,0 +1,75 @@
+{
+  "name": "@farisaziz12/web-core.components",
+  "version": "1.0.0",
+  "description": "Reusable packages to make website building faster",
+  "author": "farisaziz12",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farisaziz12/web-core.git",
+    "dir": "/packages/components"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepare": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "npm publish",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier --write . && git add -A .",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
+    "husky": "^5.0.0-beta.0",
+    "jest": "24.9.0",
+    "microbundle-crl": "^0.13.10",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
+  },
+  "bugs": {
+    "url": "https://github.com/farisaziz12/web-core/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "auto-bind": "^4.0.0",
+    "ramda": "^0.27.1"
+  }
+}
