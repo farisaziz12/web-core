@@ -6,8 +6,10 @@ export class Auth {
     auth: any;
 
     constructor(config: object) {
-        this.app = firebase.initializeApp(config);
-        this.auth = firebase.auth();
+        if (!firebase.apps.length) {
+            this.app = firebase.initializeApp(config);
+            this.auth = firebase.auth();
+        }
     }
 
     login(email: string, password: string) {
